@@ -10,19 +10,8 @@ import MessageBox from './MessageBox';
 
 const Login = ({ errorText, isAuthenticating, onSubmit }) => (
   <div className="auth-page">
-    <AppBar
-      iconElementRight={
-        <RaisedButton
-          containerElement={<Link to="/signup" />}
-          label="Sign up"
-          secondary
-        />
-      }
-      showMenuIconButton={false}
-      style={{ background: white, boxShadow: 'none' }}
-    />
 
-    <main className="container container--small">
+      <main className="container container--small">
       <div className="logo-container">
         <img src="images/company_logo.jpg" />
         <h1>Property Management System</h1>
@@ -61,7 +50,13 @@ const Login = ({ errorText, isAuthenticating, onSubmit }) => (
         </RaisedButton>
       </form>
 
-      <FlatButton label="Forgot password?" primary style={{ width: '100%' }} />
+      <FlatButton
+        primary style={{ width: '100%' }}  
+        containerElement={<Link to="/signup" />}
+        label="Sign up as new user"
+        secondary
+      />
+      
     </main>
     <footer className="version">
       Version 1.0.0

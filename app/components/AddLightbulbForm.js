@@ -47,6 +47,21 @@ const AddLightbulbForm = ({
       hintText="E.g. abcde12345"
       {...serialNumberProps}
     />
+    <TextField
+      disabled={isAdding}
+      floatingLabelFixed
+      floatingLabelText="Minimum Compressor Pressure"
+      hintText="PSI"
+      //{...nameProps}
+    />
+    <TextField
+      disabled={isAdding}
+      floatingLabelFixed
+      floatingLabelText="Maximum Compressor Pressure"
+      hintText="PSI"
+      //{...nameProps}
+    />
+
     <div className="dialog__actions">
       <FlatButton disabled={isAdding} label="Cancel" onTouchTap={onCancel} primary />
       <RaisedButton disabled={isAdding} label="Add" onTouchTap={onAddLightbulb} primary>

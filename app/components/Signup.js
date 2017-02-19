@@ -12,7 +12,7 @@ const Signup = ({ errorText, email, password, confirmPassword, onSubmit }) => (
       iconElementRight={
         <RaisedButton
           containerElement={<Link to="/login" />}
-          label="Login"
+          label="Back"
           secondary
         />
       }

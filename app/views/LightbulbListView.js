@@ -148,7 +148,7 @@ export default class LightbulbListView extends React.Component {
     return (
       <div>
         <NavBar />
-        <PageHeader title="My Home" />
+        <PageHeader title="Hanging Garden Apartments, Babylon, NY" />
         <div className="container">
           {this.renderMainContent()}
         </div>

@@ -28,7 +28,7 @@ const NavBar = ({ showHomeButton }) => (
             style={{ position: 'absolute', top: 14, left: 0 }}
           />
         }
-        <img className="logo" src="/images/example_iot_company_logo_mark.svg" />
+        <img className="logo" src="/images/company_logo.jpg" />
         <FlatButton
           containerElement={
             <Link to="/logout" />

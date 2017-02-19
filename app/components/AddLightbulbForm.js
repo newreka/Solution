@@ -37,7 +37,7 @@ const AddLightbulbForm = ({
       disabled={isAdding}
       floatingLabelFixed
       floatingLabelText="Name"
-      hintText="E.g. Living Room Lamp"
+      hintText="E.g. Apartment or Unit"
       {...nameProps}
     />
     <TextField

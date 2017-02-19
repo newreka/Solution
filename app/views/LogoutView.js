@@ -27,9 +27,9 @@ export default class LogoutView extends React.Component {
 
       <main className="container container--small" style={{ textAlign: 'center' }}>
           <div className="logo-container">
-            <img src="images/example_iot_company_logo_mark.svg" />
-            <h1>Example</h1>
-            <h4>IoT Company</h4>
+            <img src="images/company_logo.jpg" />
+            <h1>Property Management System</h1>
+            <h3>Newreka LLC</h3>
           </div>
 
           <h2 style={{ textAlign: 'center' }}>Logout</h2>

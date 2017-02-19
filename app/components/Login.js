@@ -24,7 +24,7 @@ const Login = ({ errorText, isAuthenticating, onSubmit }) => (
 
     <main className="container container--small">
       <div className="logo-container">
-        <img src="images/example_iot_company_logo_mark.svg" />
+        <img src="images/company_logo.jpg" />
         <h1>Property Management System</h1>
         <h3>Newreka LLC</h3>
       </div>

@@ -22,9 +22,9 @@ const Signup = ({ errorText, email, password, confirmPassword, onSubmit }) => (
 
     <main className="container container--small">
       <div className="logo-container">
-        <img src="images/example_iot_company_logo_mark.svg" />
-        <h1>Example</h1>
-        <h4>IoT Company</h4>
+        <img src="images/company_logo.jpg" />
+        <h1>Property Management System</h1>
+        <h3>Newreka LLC</h3>
       </div>
 
       <h2 style={{ textAlign: 'center' }}>Sign Up</h2>
@@ -66,7 +66,7 @@ const Signup = ({ errorText, email, password, confirmPassword, onSubmit }) => (
       </form>
     </main>
     <footer className="version">
-      Version 1.0.4
+      Version 1.0.0
     </footer>
   </div>
 );

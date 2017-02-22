@@ -163,13 +163,13 @@ export default class LightbulbView extends React.Component {
     if (errorText) return this.renderErrorMessage();
     if (!lightbulb) return <LoadingIndicator />;
 
-    const { humidity, name, serialnumber, temperature } = lightbulb;
+    const { refrig_pressure, name, serialnumber, outside_temp } = lightbulb;
     const state = parseInt(lightbulb.state);
     const toggledState = +!state; // toggle between 0 and 1 - JS magic!!
 
     return (
       <LightbulbDetail
-        humidity={parseInt(humidity)}
+        refrig_pressure={parseInt(refrig_pressure)}
         isChangingBulbState={isChangingBulbState}
         isOn={state === 1}
         name={name || '[unnamed]'}
@@ -177,7 +177,7 @@ export default class LightbulbView extends React.Component {
           this.handleSetLightbulbState(serialnumber, toggledState)
         }
         serialNumber={serialnumber}
-        temperature={parseInt(temperature)}
+        outside_temp={parseInt(outside_temp)}
       />
     );
   }

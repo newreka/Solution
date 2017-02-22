@@ -36,8 +36,8 @@ Timeseries.write({
 local value = kv_read(data.device_sn)
 if value == nil then
   value = {
-    humidity = nil,
-    temperature = nil,
+    refrig_pressure = nil,
+    outside_temp = nil,
     state = nil
   }
 end

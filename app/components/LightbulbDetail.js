@@ -8,13 +8,13 @@ import React from 'react';
 import PageHeader from './PageHeader';
 
 const LightbulbDetail = ({
-  humidity,
+  refrig_pressure,
   isChangingBulbState,
   isOn,
   name,
   onSetLightbulbState,
   serialNumber,
-  temperature,
+  outside_temp,
 }) => (
   <div>
     <PageHeader title={name} subtitle={serialNumber} />
@@ -46,28 +46,28 @@ const LightbulbDetail = ({
       </Paper>
       <Paper className="card card--small card--temp">
         <h3 className="card__text--value">
-          {temperature ? `${temperature}°F` : '--'}
+          {outside_temp ? `${outside_temp}°F` : '--'}
         </h3>
-        <p className="card__text--label">Current Temperature</p>
+        <p className="card__text--label">Outside Temperature</p>
       </Paper>
-      <Paper className="card card--small card--humidity">
+      <Paper className="card card--small card--refrig_pressure">
         <h3 className="card__text--value">
-          {humidity ? `${humidity}%` : '--'}
+          {refrig_pressure ? `${refrig_pressure} psi` : '--'}
         </h3>
-        <p className="card__text--label">Current Humidity</p>
+        <p className="card__text--label">Pressure</p>
       </Paper>
     </div>
   </div>
 );
 
 LightbulbDetail.propTypes = {
-  humidity: React.PropTypes.number.isRequired,
+  refrig_pressure: React.PropTypes.number.isRequired,
   isChangingBulbState: React.PropTypes.bool.isRequired,
   isOn: React.PropTypes.bool.isRequired,
   name: React.PropTypes.string.isRequired,
   onSetLightbulbState: React.PropTypes.func.isRequired,
   serialNumber: React.PropTypes.string.isRequired,
-  temperature: React.PropTypes.number.isRequired,
+  outside_temp: React.PropTypes.number.isRequired,
 };
 
 export default LightbulbDetail;

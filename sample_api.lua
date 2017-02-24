@@ -306,7 +306,7 @@ if user ~= nil then
   if isowner == 'OK' then
     -- allow the owner to write these resources
     local message = {}
-    for _, alias in ipairs({"state", "refrig_pressure", "outside_temp"}) do
+    for _, alias in ipairs({"state", "carrier", "outside_temp"}) do
       if request.body[alias] ~= nil then
         local ret = device_write(sn, alias, request.body[alias])
         if ret.status ~= nil and ret.status ~= "ok" then

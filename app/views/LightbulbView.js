@@ -163,21 +163,51 @@ export default class LightbulbView extends React.Component {
     if (errorText) return this.renderErrorMessage();
     if (!lightbulb) return <LoadingIndicator />;
 
-    const { refrig_pressure, name, serialnumber, outside_temp } = lightbulb;
+    //const { signal_strength, conn_uptime, registered, imei, carrier, refrig_pressure, name, serialNumber, outside_temp } = lightbulb;
+    const { carrier,
+            compressor_running,
+            compressor_powered,
+            tamper_1,
+            conn_uptime,
+            tamper_2,
+            mains_power,
+            outside_temp,
+            location,
+            imei,
+            refrig_pressure,
+            battery_lvl,
+            registered,
+            signal_strength,
+            name,
+            serialNumber } = lightbulb;
+
     const state = parseInt(lightbulb.state);
     const toggledState = +!state; // toggle between 0 and 1 - JS magic!!
 
     return (
       <LightbulbDetail
+        carrier={carrier}
+        imei={imei}
+        signal_strength={parseInt(signal_strength)}
+        conn_uptime={parseInt(conn_uptime)/60}
+        registered={registered}
+        tamper_1={tamper_1}
+        tamper_2={tamper_2}
+        location={location}
+        outside_temp={parseInt(outside_temp)}
+        mains_power={mains_power}
+        battery_lvl={parseFloat (battery_lvl)}
+        compressor_powered={compressor_powered}
+        compressor_running={compressor_running}
         refrig_pressure={parseInt(refrig_pressure)}
-        isChangingBulbState={isChangingBulbState}
-        isOn={state === 1}
+        //isChangingBulbState={isChangingBulbState}
+        //isOn={state === 1}
         name={name || '[unnamed]'}
         onSetLightbulbState={() =>
           this.handleSetLightbulbState(serialnumber, toggledState)
         }
-        serialNumber={serialnumber}
-        outside_temp={parseInt(outside_temp)}
+        serialNumber={serialNumber}
+        
       />
     );
   }

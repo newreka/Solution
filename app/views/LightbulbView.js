@@ -189,25 +189,19 @@ export default class LightbulbView extends React.Component {
         carrier={carrier}
         imei={imei}
         signal_strength={parseInt(signal_strength)}
-        conn_uptime={parseInt(conn_uptime)/60}
-        registered={registered}
-        tamper_1={tamper_1}
-        tamper_2={tamper_2}
+        conn_uptime={parseInt((conn_uptime)/60)}
+        registered={(registered == 0) ? "No":"Yes"}
+        tamper_1={(tamper_1 == 0) ? "Good":"Tamper"}
+        tamper_2={(tamper_2 == 0) ? "Good":"Tamper"}
         location={location}
         outside_temp={parseInt(outside_temp)}
-        mains_power={mains_power}
+        mains_power={(mains_power == 0) ? "Off":"On"}
         battery_lvl={parseFloat (battery_lvl)}
-        compressor_powered={compressor_powered}
-        compressor_running={compressor_running}
+        compressor_powered={(compressor_powered == 0) ? "No":"Yes"}
+        compressor_running={(compressor_running == 0) ? "No":"Yes"}
         refrig_pressure={parseInt(refrig_pressure)}
-        //isChangingBulbState={isChangingBulbState}
-        //isOn={state === 1}
         name={name || '[unnamed]'}
-        onSetLightbulbState={() =>
-          this.handleSetLightbulbState(serialnumber, toggledState)
-        }
         serialNumber={serialNumber}
-        
       />
     );
   }

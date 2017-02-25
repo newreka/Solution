@@ -29,10 +29,10 @@ const LightbulbDetail = ({
   <div>
     <PageHeader title={name} subtitle={serialNumber} />
     <Table>
-      <TableBody>
+      <TableBody displayRowCheckbox={false} >
         <TableRow>
-          <TableRowColumn>Communications</TableRowColumn>
-          <TableRowColumn> </TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray', color: 'white'}}>Communications</TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray'}}></TableRowColumn>
         </TableRow>
         <TableRow>
           <TableRowColumn>Carrier</TableRowColumn>
@@ -55,8 +55,8 @@ const LightbulbDetail = ({
           <TableRowColumn>{conn_uptime} min</TableRowColumn>
         </TableRow>
         <TableRow>
-          <TableRowColumn>Security</TableRowColumn>
-          <TableRowColumn> </TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray', color: 'white'}}>Security</TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray'}}></TableRowColumn>
         </TableRow>
         <TableRow>
           <TableRowColumn>Tamper Switch 1</TableRowColumn>
@@ -71,8 +71,8 @@ const LightbulbDetail = ({
           <TableRowColumn>{location}</TableRowColumn>
         </TableRow>
         <TableRow>
-          <TableRowColumn>Environment</TableRowColumn>
-          <TableRowColumn></TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray', color: 'white'}}>Environment</TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray'}}></TableRowColumn>
         </TableRow>
         <TableRow>
           <TableRowColumn>Outside Temperature</TableRowColumn>
@@ -87,8 +87,8 @@ const LightbulbDetail = ({
           <TableRowColumn>{battery_lvl}</TableRowColumn>
         </TableRow>
         <TableRow>
-          <TableRowColumn>Compressor</TableRowColumn>
-          <TableRowColumn></TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray', color: 'white'}}>Compressor</TableRowColumn>
+          <TableRowColumn style={{backgroundColor:'gray'}}></TableRowColumn>
         </TableRow>
         <TableRow>
           <TableRowColumn>Powered</TableRowColumn>
@@ -109,20 +109,20 @@ const LightbulbDetail = ({
 
 LightbulbDetail.propTypes = {
   carrier: React.PropTypes.string.isRequired,
-  state: React.PropTypes.bool.isRequired,
-  compressor_running: React.PropTypes.bool.isRequired,
-  compressor_powered: React.PropTypes.bool.isRequired,
-  tamper_1: React.PropTypes.bool.isRequired,
+  //state: React.PropTypes.bool.isRequired,
+  compressor_running: React.PropTypes.string.isRequired,
+  compressor_powered: React.PropTypes.string.isRequired,
+  tamper_1: React.PropTypes.string.isRequired,
   conn_uptime: React.PropTypes.number.isRequired,
-  tamper_2: React.PropTypes.bool.isRequired,
-  mains_power: React.PropTypes.bool.isRequired,
+  tamper_2: React.PropTypes.string.isRequired,
+  mains_power: React.PropTypes.string.isRequired,
   outside_temp: React.PropTypes.number.isRequired,
   refrig_pressure: React.PropTypes.number.isRequired,
   battery_lvl: React.PropTypes.number.isRequired,
-  registered: React.PropTypes.bool.isRequired,
+  registered: React.PropTypes.string.isRequired,
   battery_lvl: React.PropTypes.number.isRequired,
   name: React.PropTypes.string.isRequired,
-  onSetLightbulbState: React.PropTypes.func.isRequired,
+  //onSetLightbulbState: React.PropTypes.func.isRequired,
   serialNumber: React.PropTypes.string.isRequired
 };
 

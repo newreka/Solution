@@ -15,7 +15,7 @@
 import Avatar from 'material-ui/Avatar';
 import { ListItem } from 'material-ui/List';
 import { black, grey200, white, yellow500 } from 'material-ui/styles/colors';
-import LightbulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
+import LightbulbIcon from 'material-ui/svg-icons/hardware/toys';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import React from 'react';
 import { Link } from 'react-router';
@@ -29,8 +29,8 @@ const LightbulbListItem = ({
     containerElement={<Link to={`/lightbulbs/${serialNumber}`} />}
     leftAvatar={
       <Avatar
-        backgroundColor={isOn ? yellow500 : grey200}
-        icon={<LightbulbIcon style={{ fill: isOn ? white : black }} />}
+        backgroundColor={grey200}
+        icon={<LightbulbIcon style={{ fill: black }} />}
       />
     }
     primaryText={name || '[unnamed]'}

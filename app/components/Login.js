@@ -39,15 +39,17 @@ const Login = ({ errorText, isAuthenticating, onSubmit }) => (
           required
           type="password"
         />
-        <RaisedButton
-          disabled={isAuthenticating}
-          label="Login"
-          primary
-          style={{ marginTop: 16, width: '40%' }}
-          type="submit"
-        >
-          {isAuthenticating && <LinearProgress />}
-        </RaisedButton>
+        <center>
+          <RaisedButton
+            disabled={isAuthenticating}
+            label="Login"
+            primary
+            style={{ marginTop: 16 }}
+            type="submit"
+          >
+            {isAuthenticating && <LinearProgress />}
+          </RaisedButton>
+        </center>
       </form>
 
       <FlatButton

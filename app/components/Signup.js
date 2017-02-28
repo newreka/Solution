@@ -12,7 +12,7 @@ const Signup = ({ errorText, email, password, confirmPassword, onSubmit }) => (
       iconElementRight={
         <RaisedButton
           containerElement={<Link to="/login" />}
-          label="Back"
+          label="< Back"
           secondary
         />
       }
@@ -56,13 +56,14 @@ const Signup = ({ errorText, email, password, confirmPassword, onSubmit }) => (
           type="password"
           {...confirmPassword}
         />
-        <RaisedButton
-          fullWidth
-          label="Sign up"
-          primary
-          style={{ marginTop: 16, width: '100%' }}
-          type="submit"
-        />
+        <center>
+          <RaisedButton
+            label="Sign up"
+            primary
+            style={{ marginTop: 16 }}
+            type="submit"
+          />
+        </center>
       </form>
     </main>
     <footer className="version">

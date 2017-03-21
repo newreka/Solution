@@ -29,6 +29,8 @@ const AddLightbulbForm = ({
   onAddLightbulb,
   onCancel,
   serialNumberProps,
+  loPresWarnProps,
+  hiPresWarnProps
 }) => (
   <form onSubmit={onAddLightbulb}>
     {formErrorText && <MessageBox error text={formErrorText} />}
@@ -52,14 +54,14 @@ const AddLightbulbForm = ({
       floatingLabelFixed
       floatingLabelText="Minimum Compressor Pressure"
       hintText="PSI"
-      //{...nameProps}
+      {...loPresWarnProps}
     />
     <TextField
       disabled={isAdding}
       floatingLabelFixed
       floatingLabelText="Maximum Compressor Pressure"
       hintText="PSI"
-      //{...nameProps}
+      {...hiPresWarnProps}
     />
 
     <div className="dialog__actions">
@@ -78,6 +80,8 @@ AddLightbulbForm.propTypes = {
   serialNumberProps: React.PropTypes.object.isRequired,
   onAddLightbulb: React.PropTypes.func.isRequired,
   onCancel: React.PropTypes.func.isRequired,
+  loPresWarnProps: React.PropTypes.object.isRequired,
+  hiPresWarnProps: React.PropTypes.object.isRequired 
 };
 
 export default AddLightbulbForm;

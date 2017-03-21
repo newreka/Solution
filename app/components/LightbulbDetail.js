@@ -109,7 +109,6 @@ const LightbulbDetail = ({
 
 LightbulbDetail.propTypes = {
   carrier: React.PropTypes.string.isRequired,
-  //state: React.PropTypes.bool.isRequired,
   compressor_running: React.PropTypes.string.isRequired,
   compressor_powered: React.PropTypes.string.isRequired,
   tamper_1: React.PropTypes.string.isRequired,
@@ -122,7 +121,6 @@ LightbulbDetail.propTypes = {
   registered: React.PropTypes.string.isRequired,
   battery_lvl: React.PropTypes.number.isRequired,
   name: React.PropTypes.string.isRequired,
-  //onSetLightbulbState: React.PropTypes.func.isRequired,
   serialNumber: React.PropTypes.string.isRequired
 };
 

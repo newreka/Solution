@@ -66,33 +66,33 @@ function getInitialState(context) {
       },
       value: '',
     },
-    // this is a hiPresWarn field meant to be applied to the name input
+    // this is a lo_pres_warn field meant to be applied to the name input
     // it handles all useful events & the name value
-    hiPresWarn: {
+    lo_pres_warn: {
       errorText: null,
-      onBlur() { context.validatehiPresWarn() },
+      onBlur() { context.validatelo_pres_warn() },
       onChange(evt, value) {
-        const hiPresWarn = {
-          ...context.state.hiPresWarn, // keep all other serial number props the same
+        const lo_pres_warn = {
+          ...context.state.lo_pres_warn, // keep all other serial number props the same
           value,
         };
-        context.setState({ hiPresWarn });
-        context.validatehiPresWarn(hiPresWarn);
+        context.setState({ lo_pres_warn });
+        context.validatelo_pres_warn(lo_pres_warn);
       },
       value: '',
     },
-    // this is a loPresWarn field meant to be applied to the name input
+    // this is a hi_pres_warn field meant to be applied to the name input
     // it handles all useful events & the name value
-    loPresWarn: {
+    hi_pres_warn: {
       errorText: null,
-      onBlur() { context.validateloPresWarn() },
+      onBlur() { context.validatehi_pres_warn() },
       onChange(evt, value) {
-        const loPresWarn = {
-          ...context.state.loPresWarn, // keep all other serial number props the same
+        const hi_pres_warn = {
+          ...context.state.hi_pres_warn, // keep all other serial number props the same
           value,
         };
-        context.setState({ loPresWarn });
-        context.validateloPresWarn(loPresWarn);
+        context.setState({ hi_pres_warn });
+        context.validatehi_pres_warn(hi_pres_warn);
       },
       value: '',
     },
@@ -153,39 +153,18 @@ export default class AddLightbulbModal extends React.Component {
   }
 
   /* add / remove error text & return if the serial number is valid */
-  validatehiPresWarn(nexthiPresWarnState) {
+/* validatelo_pres_warn(nextlo_pres_warnState) {
     // We have to allow the ability to pass in the state because this.setState()
     // doesn't update immediately. This is one example where a React state
     // manager would be useful
-    const hiPresWarn = nexthiPresWarnState || this.state.hiPresWarn;
+    const lo_pres_warn = nextlo_pres_warnState || this.state.lo_pres_warn;
     let errorText = null;
-    if (!hiPresWarn.value) errorText = 'This field is required';
+    if (!lo_pres_warn.value) errorText = 'This field is required';
 
-    if (hiPresWarn.errorText !== errorText) {
+    if (lo_pres_warn.errorText !== errorText) {
       this.setState({
-        hiPresWarn: {
-          ...hiPresWarn, // keep all other serial number properties the same
-          errorText,
-        },
-      });
-    }
-
-    return !errorText; // field is valid if there's no error text
-  }  
-  
-    /* add / remove error text & return if the serial number is valid */
-  validateloPresWarn(nextloPresWarnState) {
-    // We have to allow the ability to pass in the state because this.setState()
-    // doesn't update immediately. This is one example where a React state
-    // manager would be useful
-    const loPresWarn = nextloPresWarnState || this.state.loPresWarn;
-    let errorText = null;
-    if (!loPresWarn.value) errorText = 'This field is required';
-
-    if (loPresWarn.errorText !== errorText) {
-      this.setState({
-        loPresWarn: {
-          ...loPresWarn, // keep all other serial number properties the same
+        lo_pres_warn: {
+          ...lo_pres_warn, // keep all other serial number properties the same
           errorText,
         },
       });
@@ -193,15 +172,39 @@ export default class AddLightbulbModal extends React.Component {
 
     return !errorText; // field is valid if there's no error text
   }
-  
+*/
+    /* add / remove error text & return if the serial number is valid */
+/*  validatehi_pres_warn(nexthi_pres_warnState) {
+    // We have to allow the ability to pass in the state because this.setState()
+    // doesn't update immediately. This is one example where a React state
+    // manager would be useful
+    const hi_pres_warn = nexthi_pres_warnState || this.state.hi_pres_warn;
+    let errorText = null;
+    if (!hi_pres_warn.value) errorText = 'This field is required';
+
+    if (hi_pres_warn.errorText !== errorText) {
+      this.setState({
+        hi_pres_warn: {
+          ...hi_pres_warn, // keep all other serial number properties the same
+          errorText,
+        },
+      });
+    }
+
+    return !errorText; // field is valid if there's no error text
+  }
+*/
+
   /* add / remove all error text & return if the entire form is valid */
   validateForm() {
     const validName = this.validateName();
     const validSerialNumber = this.validateSerialNumber();
-    const validhiPresWarn = this.validatehiPresWarn();
-    const validloPresWarn = this.validateloPresWarn();
+/*    const validlo_pres_warn = this.validatelo_pres_warn();
+    const validhi_pres_warn = this.validatehi_pres_warn();
+*/
 
-    return validName && validSerialNumber && validhiPresWarn && validloPresWarn;
+ //   return validName && validSerialNumber && validlo_pres_warn && validhi_pres_warn;
+    return validName && validSerialNumber; 
   }
 
   /**
@@ -214,10 +217,10 @@ export default class AddLightbulbModal extends React.Component {
     if (!isFormValid) return;
 
     this.setState({ isAdding: true });
-    const { name, serialNumber, hiPresWarn, loPresWarn } = this.state;
+    const { name, serialNumber, lo_pres_warn, hi_pres_warn } = this.state;
     api.addLightbulb(name.value, serialNumber.value)
-    .then (api.setPressureWarn(serialNumber.value, loPresWarn.value, hiPresWarn.value))
-    //api.setPressureWarn(serialNumber.value, loPresWarn.value, hiPresWarn.value)
+//      .then (() => api.setPressureWarn(serialNumber.value, lo_pres_warn.value, hi_pres_warn.value))
+//    api.setPressureWarn(serialNumber.value, lo_pres_warn.value, hi_pres_warn.value)
       .then(() => this.handleCloseModal())
       .catch(err =>
         this.setState({
@@ -241,7 +244,7 @@ export default class AddLightbulbModal extends React.Component {
    */
   render() {
     const { isOpen, onRequestClose } = this.props;
-    const { isAdding, formErrorText, name, serialNumber, loPresWarn, hiPresWarn } = this.state;
+    const { isAdding, formErrorText, name, serialNumber, lo_pres_warn, hi_pres_warn } = this.state;
     // Note: the <Dialog /> component has an "actions" property. Normally you'd
     // use this to render the actions. However, you can't get those actions into
     // a form so it's hard to get "enter" to submit the form. We just render
@@ -258,8 +261,8 @@ export default class AddLightbulbModal extends React.Component {
           formErrorText={formErrorText}
           nameProps={name}
           serialNumberProps={serialNumber}
-          loPresWarnProps={loPresWarn}
-          hiPresWarnProps={hiPresWarn}
+          lo_pres_warnProps={lo_pres_warn}
+          hi_pres_warnProps={hi_pres_warn}
           onCancel={() => this.handleCloseModal()}
           onAddLightbulb={() => this.handleAddLightbulb()}
         />

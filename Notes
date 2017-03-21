@@ -1,0 +1,8 @@
+1) Deleting devices from Product does not delete devices from Solution. Must reinit and redeploy solution using Exosite.
+
+2) Changing Product Definition does not automatically update a device added to Solution?
+
+2) To add a new device:
+    a) Create the new device in Product
+    b) Run the Simulator to activate the device
+    c) Add the device in Solution

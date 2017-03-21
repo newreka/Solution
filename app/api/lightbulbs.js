@@ -16,12 +16,16 @@ function addLightbulb(name, serialnumber) {
   return service.post(`/user/${email}/lightbulbs`, body);
 }
 
-function setLightbulbState(serialNumber, state) {
-  return service.post(`/lightbulb/${serialNumber}`, { state: state.toString() });
+function setPressureWarn(serialNumber, lo_pres_warn, hi_pres_warn) {
+  const body = {
+    lo_pres_warn,
+    hi_pres_warn
+  };
+  return service.post(`/lightbulb/${serialNumber}`, body);
 }
 
 export default {
   addLightbulb,
   getLightbulbs,
-  setLightbulbState,
+  setPressureWarn
 };

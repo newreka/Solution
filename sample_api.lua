@@ -295,7 +295,7 @@ http_error(403, response)
 --#ENDPOINT POST /lightbulb/{sn}
 -- write to one or more resources of lightbulb with serial number {sn}
 -- Expects JSON object containing one or more properties in 
--- "state" | "refrig_pressure" | "outside_temp" with the values to be set.
+-- "state" | "humidity" | "temperature" with the values to be set.
 -- E.g. {"state": 1} to turn the lightbulb on
 local sn = tostring(request.parameters.sn)
 local user = currentUser(request)
@@ -306,7 +306,7 @@ if user ~= nil then
   if isowner == 'OK' then
     -- allow the owner to write these resources
     local message = {}
-    for _, alias in ipairs({"state", "carrier", "outside_temp"}) do
+    for _, alias in ipairs({"lo_pres_warn", "hi_pres_warn"}) do
       if request.body[alias] ~= nil then
         local ret = device_write(sn, alias, request.body[alias])
         if ret.status ~= nil and ret.status ~= "ok" then

@@ -41,7 +41,7 @@ const Signup = ({ errorText, email, password, confirmPassword, onSubmit }) => (
           {...email}
         />
         <TextField
-          hintText="Password"
+          hintText="Password (must be 8 characters)"
           floatingLabelText="Password"
           fullWidth
           required

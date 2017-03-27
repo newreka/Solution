@@ -2,7 +2,21 @@
 
 2) Changing Product Definition does not automatically update a device added to Solution?
 
-2) To add a new device:
+3) To start with a clean Product
+    a) Delete old Product
+    b) Create new Product 
+       Use https://raw.githubusercontent.com/newreka/Product/master/newreka_device_product_spec.yaml
+
+4) To add a new device:
     a) Create the new device in Product
     b) Run the Simulator to activate the device
     c) Add the device in Solution
+
+5) To start with a clean Solution
+    a) Delete old Solution
+    b) Create new Solution 
+       Use https://github.com/newreka/Solution
+    c) Associate Solution with Product
+        
+
+https://bitbucket.org/newrekaproject/solution/src

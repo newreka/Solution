@@ -38,7 +38,22 @@ if value == nil then
   value = {
     refrig_pressure = nil,
     outside_temp = nil,
-    state = nil
+    carrier = nil,
+    compressor_running = nil,
+    compressor_powered = nil,
+    tamper_1 = nil,
+    conn_uptime = nil,
+    tamper_2 = nil,
+    mains_power = nil,
+    outside_temp = nil,
+    location = nil,
+    imei = nil,
+    refrig_pressure = nil,
+    battery_lvl = nil,
+    registered = nil,
+    signal_strength = nil,
+    lo_pres_warn = nil,
+    hi_pres_warn = nil
   }
 end
 value[data.alias] = data.value[2]

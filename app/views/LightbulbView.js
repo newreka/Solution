@@ -179,7 +179,7 @@ export default class LightbulbView extends React.Component {
             registered,
             signal_strength,
             name,
-            serialNumber } = lightbulb;
+            serialnumber } = lightbulb;
 
     const state = parseInt(lightbulb.state);
     const toggledState = +!state; // toggle between 0 and 1 - JS magic!!
@@ -201,7 +201,7 @@ export default class LightbulbView extends React.Component {
         compressor_running={(compressor_running == 0) ? "No":"Yes"}
         refrig_pressure={parseInt(refrig_pressure)}
         name={name || '[unnamed]'}
-        serialNumber={serialNumber}
+        serialNumber={serialnumber}
       />
     );
   }

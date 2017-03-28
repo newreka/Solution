@@ -216,7 +216,7 @@ export default class AddLightbulbModal extends React.Component {
     this.setState({ isAdding: true });
     const { name, serialNumber, hiPresWarn, loPresWarn } = this.state;
     api.addLightbulb(name.value, serialNumber.value)
-    .then (api.setPressureWarn(serialNumber.value, loPresWarn.value, hiPresWarn.value))
+      .then (api.setPressureWarn(serialNumber.value, loPresWarn.value, hiPresWarn.value))
     //api.setPressureWarn(serialNumber.value, loPresWarn.value, hiPresWarn.value)
       .then(() => this.handleCloseModal())
       .catch(err =>

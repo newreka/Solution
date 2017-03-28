@@ -41,7 +41,7 @@ export function handleResponse(response) {
   err.response = response;
 
   if (response.status === 401 || response.status === 403) {
-    hashHistory.replace('/login');
+    //hashHistory.replace('/login');
     return Promise.reject(err);
   }
 

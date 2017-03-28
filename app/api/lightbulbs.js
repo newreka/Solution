@@ -16,10 +16,10 @@ function addLightbulb(name, serialnumber) {
   return service.post(`/user/${email}/lightbulbs`, body);
 }
 
-function setPressureWarn(serialNumber, lo_pres_warn, hi_pres_warn) {
+function setPressureWarn(serialNumber, underPressure, overPressure) {
   const body = {
-    lo_pres_warn,
-    hi_pres_warn
+    underPressure,
+    overPressure
   };
   return service.post(`/lightbulb/${serialNumber}`, body);
 }

@@ -52,8 +52,8 @@ if value == nil then
     battery_lvl = nil,
     registered = nil,
     signal_strength = nil,
-    lo_pres_warn = nil,
-    hi_pres_warn = nil
+    underPressure = nil,
+    overPressure = nil
   }
 end
 value[data.alias] = data.value[2]

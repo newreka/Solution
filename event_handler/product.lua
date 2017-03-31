@@ -30,9 +30,12 @@
   Event time
 --]]
 
-Timeseries.write({
+--[[
+  Timeseries.write({
   query = data.alias .. ",sn=" .. data.device_sn .. " value=" .. tostring(data.value[2])
 })
+--]]
+
 local value = kv_read(data.device_sn)
 if value == nil then
   value = {

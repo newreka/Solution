@@ -67,7 +67,7 @@ function device_write(sn, alias, value)
   end
 
   -- save to keystore
-  kv_write(sn, {[alias]=value})
+  -- kv_write(sn, {[alias]=value})
 
   -- push to device
   return Device.write({

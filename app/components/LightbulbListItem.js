@@ -26,7 +26,7 @@ const LightbulbListItem = ({
   serialNumber,
 }) => (
   <ListItem
-    containerElement={<Link to={`/lightbulbs/${serialNumber}`} />}
+    containerElement={<Link to={`/devices/${serialNumber}`} />}
     leftAvatar={
       <Avatar
         backgroundColor={grey200}

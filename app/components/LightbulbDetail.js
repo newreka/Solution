@@ -27,9 +27,11 @@ const LightbulbDetail = ({
   serialNumber
 }) => (
   <div>
-    <PageHeader title={name} subtitle={serialNumber} />
+    <PageHeader title={name} subtitle={"Device ID: " + serialNumber} />
     <Table>
-      <TableBody displayRowCheckbox={false} >
+      <TableBody 
+        displayRowCheckbox={false} 
+      >
         <TableRow>
           <TableRowColumn style={{backgroundColor:'gray', color: 'white'}}>Communications</TableRowColumn>
           <TableRowColumn style={{backgroundColor:'gray'}}></TableRowColumn>

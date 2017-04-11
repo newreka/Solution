@@ -16,7 +16,7 @@ const NavBar = ({ showHomeButton }) => (
           showHomeButton &&
           <RaisedButton
             containerElement={
-              <Link to="/lightbulbs" />
+              <Link to="/devices" />
             }
             icon={
               <div className="navbar__button-icon">

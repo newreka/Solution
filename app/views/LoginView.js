@@ -23,7 +23,7 @@ export default class LoginView extends React.Component {
       .then(response => {
         store.email = email;
         store.token = response.payload.token;
-        hashHistory.replace('/lightbulbs');
+        hashHistory.replace('/devices');
       })
       .catch(err => {
         this.setState({

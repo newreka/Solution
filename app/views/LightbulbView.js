@@ -128,7 +128,7 @@ export default class LightbulbView extends React.Component {
     const lightbulbs = response.payload;
     const lightbulb = lightbulbs.filter(bulb => bulb.serialnumber == serialnumber)[0];
 
-    if (!lightbulb) return hashHistory.replace('/lightbulbs');
+    if (!lightbulb) return hashHistory.replace('/devices');
 
     if (!lightbulb.hasOwnProperty('state') || lightbulb.state === null || lightbulb.state === "undefined") {
       return this.setState({
@@ -163,8 +163,7 @@ export default class LightbulbView extends React.Component {
     if (errorText) return this.renderErrorMessage();
     if (!lightbulb) return <LoadingIndicator />;
 
-    //const { signal_strength, conn_uptime, registered, imei, carrier, refrig_pressure, name, serialNumber, outside_temp } = lightbulb;
-    const { carrier,
+     const { carrier,
             compressor_running,
             compressor_powered,
             tamper_1,

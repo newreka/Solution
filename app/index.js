@@ -25,9 +25,9 @@ render(
       <Route path='/signup-confirmation' component={SignupConfirmationView} />
 
       <Route path="/" component={Authenticated}>
-        <IndexRedirect to="/lightbulbs" />
-        <Route path="lightbulbs/:serialnumber" component={LightbulbView} />
-        <Route path="lightbulbs" component={LightbulbListView} />
+        <IndexRedirect to="/devices" />
+        <Route path="devices/:serialnumber" component={LightbulbView} />
+        <Route path="devices" component={LightbulbListView} />
       </Route>
     </Route>
   </Router>,
